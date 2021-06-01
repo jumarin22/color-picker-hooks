@@ -35,13 +35,15 @@ export function App() {
   return (
     <>
       <h1>Color Picker</h1>
-      <article>
+      <article className="displayBox">
         <div className="underBox">&nbsp;</div>
         <div className="colorBox" style={newStyle}>
           &nbsp;
         </div>
       </article>
-      <p>{newBackgroundColor}</p>
+      <label htmlFor="displayBox" className="display">
+        {newBackgroundColor}
+      </label>
       <div className="sliders">
         <div className="inputs">
           <input

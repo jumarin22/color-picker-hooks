@@ -27,11 +27,13 @@ h1 {
 
 article {
   margin: auto;
+  margin-bottom: 1rem;
   border: black thick solid;
   max-width: max-content;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  border-radius: 0.3rem;
 }
 
 .underBox {
@@ -59,6 +61,12 @@ article {
   background-color: aqua;
 }
 
+.display {
+  padding: 0.3rem;
+  background-color: lightgray;
+  border-radius: 0.3rem;
+}
+
 .sliders {
   display: flex;
   flex-direction: column wrap;
@@ -79,9 +87,6 @@ input {
   margin-bottom: 1rem;
   margin-left: 0;
   justify-content: space-between;
-}
-
-label {
   font-weight: bold;
   color: black;
   text-shadow: lightgray 0.05rem 0.05rem;
