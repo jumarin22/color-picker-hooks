@@ -22,7 +22,7 @@ export function App() {
     setAlpha(e.target.value)
   }
 
-  function handleNewState(e) {
+  function handleRandomize(e) {
     setHue(Math.floor(Math.random() * 360))
     setSat(Math.floor(Math.random() * 100))
     setLight(Math.floor(Math.random() * 100))
@@ -82,7 +82,7 @@ export function App() {
         />
         <label>A</label>
       </div>
-      <button type="button" onClick={handleNewState}>
+      <button type="button" onClick={handleRandomize}>
         Randomize!
       </button>
     </>
