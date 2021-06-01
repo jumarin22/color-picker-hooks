@@ -65,6 +65,7 @@ article {
   padding: 0.3rem;
   background-color: lightgray;
   border-radius: 0.3rem;
+  box-shadow: black 0.3rem 0.3rem;
 }
 
 .sliders {
@@ -93,6 +94,6 @@ input {
   text-shadow: lightgray 0.05rem 0.05rem;
 }
 button {
-  box-shadow: black 0.05rem 0.05rem;
+  box-shadow: black 0.3rem 0.3rem;
   color: black;
 }
