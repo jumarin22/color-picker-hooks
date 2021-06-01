@@ -7,23 +7,19 @@ export function App() {
   const [alpha, setAlpha] = useState(Math.floor(Math.random() * 100))
 
   function handleHueChange(e) {
-    const newHue = e.target.value
-    setHue(newHue)
+    setHue(e.target.value)
   }
 
   function handleSatChange(e) {
-    const newSat = e.target.value
-    setSat(newSat)
+    setSat(e.target.value)
   }
 
   function handleLightChange(e) {
-    const newLight = e.target.value
-    setLight(newLight)
+    setLight(e.target.value)
   }
 
   function handleAlphaChange(e) {
-    const newAlpha = e.target.value
-    setAlpha(newAlpha)
+    setAlpha(e.target.value)
   }
 
   function handleNewState(e) {
