@@ -42,45 +42,47 @@ export function App() {
         </div>
       </article>
       <p>{newBackgroundColor}</p>
-      <div className="slider">
-        <input
-          type="range"
-          min="0"
-          max="360"
-          value={hue}
-          onChange={handleHueChange}
-        />
-        <label>H</label>
-      </div>
-      <div className="slider">
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={sat}
-          onChange={handleSatChange}
-        />
-        <label>S</label>
-      </div>
-      <div className="slider">
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={light}
-          onChange={handleLightChange}
-        />
-        <label>L</label>
-      </div>
-      <div className="slider">
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={alpha}
-          onChange={handleAlphaChange}
-        />
-        <label>A</label>
+      <div className="sliders">
+        <div className="inputs">
+          <input
+            id="hueSlider"
+            type="range"
+            min="0"
+            max="360"
+            value={hue}
+            onChange={handleHueChange}
+          />
+          <input
+            id="satSlider"
+            type="range"
+            min="0"
+            max="100"
+            value={sat}
+            onChange={handleSatChange}
+          />
+          <input
+            id="lightSlider"
+            type="range"
+            min="0"
+            max="100"
+            value={light}
+            onChange={handleLightChange}
+          />
+          <input
+            id="alphaSlider"
+            type="range"
+            min="0"
+            max="100"
+            value={alpha}
+            onChange={handleAlphaChange}
+          />
+        </div>
+        <div className="labels">
+          <label htmlFor="hueSlider">H</label>
+          <label htmlFor="satSlider">S</label>
+          <label htmlFor="lightSlider">L</label>
+          <label htmlFor="alphaSlider">A</label>
+        </div>
       </div>
       <button type="button" onClick={handleRandomize}>
         Randomize!
