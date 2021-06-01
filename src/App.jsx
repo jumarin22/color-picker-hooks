@@ -1,95 +1,88 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export class App extends Component {
-  state = {
-    hue: Math.floor(Math.random() * 360),
-    sat: Math.floor(Math.random() * 100),
-    light: Math.floor(Math.random() * 100),
-    alpha: Math.floor(Math.random() * 100),
+export function App() {
+  const [hue, setHue] = useState(Math.floor(Math.random() * 360))
+  const [sat, setSat] = useState(Math.floor(Math.random() * 100))
+  const [light, setLight] = useState(Math.floor(Math.random() * 100))
+  const [alpha, setAlpha] = useState(Math.floor(Math.random() * 100))
+
+  function handleHueChange(e) {
+    const newHue = e.target.value
+    console.log(newHue)
+    setHue(newHue)
   }
 
-  updateHue = (e) => {
-    this.setState({ hue: e.target.value })
+  function handleSatChange(e) {
+    const newSat = e.target.value
+    console.log(newSat)
+    setSat(newSat)
   }
 
-  updateSat = (e) => {
-    this.setState({ sat: e.target.value })
+  function handleLightChange(e) {
+    const newLight = e.target.value
+    console.log(newLight)
+    setLight(newLight)
   }
 
-  updateLight = (e) => {
-    this.setState({ light: e.target.value })
+  function handleAlphaChange(e) {
+    const newAlpha = e.target.value
+    console.log(newAlpha)
+    setAlpha(newAlpha)
   }
 
-  updateAlpha = (e) => {
-    this.setState({ alpha: e.target.value })
-  }
+  const newBackgroundColor = `hsla(${hue}, ${sat}%, ${light}%, ${alpha}%)`
+  const newStyle = { backgroundColor: newBackgroundColor }
 
-  handleNewState = (e) => {
-    this.setState({
-      hue: Math.floor(Math.random() * 360),
-      sat: Math.floor(Math.random() * 100),
-      light: Math.floor(Math.random() * 100),
-      alpha: Math.floor(Math.random() * 100),
-    })
-  }
-
-  render() {
-    const newBackgroundColor = `hsla(${this.state.hue}, ${this.state.sat}%, ${this.state.light}%, ${this.state.alpha}%)`
-    const newStyle = { backgroundColor: newBackgroundColor }
-    return (
-      <>
-        <h1>Color Picker</h1>
-        <article>
-          <div className="underBox">&nbsp;</div>
-          <div className="colorBox" style={newStyle}>
-            &nbsp;
-          </div>
-        </article>
-        <p>{newBackgroundColor}</p>
-        <div className="slider">
-          <input
-            type="range"
-            min="0"
-            max="360"
-            value={this.state.hue}
-            onChange={this.updateHue}
-          />
-          <label>H</label>
+  return (
+    <>
+      <h1>Color Picker</h1>
+      <article>
+        <div className="underBox">&nbsp;</div>
+        <div className="colorBox" style={newStyle}>
+          &nbsp;
         </div>
-        <div className="slider">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={this.state.sat}
-            onChange={this.updateSat}
-          />
-          <label>S</label>
-        </div>
-        <div className="slider">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={this.state.light}
-            onChange={this.updateLight}
-          />
-          <label>L</label>
-        </div>
-        <div className="slider">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={this.state.alpha}
-            onChange={this.updateAlpha}
-          />
-          <label>A</label>
-        </div>
-        <button type="button" onClick={this.handleNewState}>
-          Randomize!
-        </button>
-      </>
-    )
-  }
+      </article>
+      <p>{newBackgroundColor}</p>
+      <div className="slider">
+        <input
+          type="range"
+          min="0"
+          max="360"
+          value={hue}
+          onChange={handleHueChange}
+        />
+        <label>H</label>
+      </div>
+      <div className="slider">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={sat}
+          onChange={handleSatChange}
+        />
+        <label>S</label>
+      </div>
+      <div className="slider">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={light}
+          onChange={handleLightChange}
+        />
+        <label>L</label>
+      </div>
+      <div className="slider">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={alpha}
+          onChange={handleAlphaChange}
+        />
+        <label>A</label>
+      </div>
+    </>
+  )
 }
