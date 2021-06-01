@@ -8,25 +8,21 @@ export function App() {
 
   function handleHueChange(e) {
     const newHue = e.target.value
-    console.log(newHue)
     setHue(newHue)
   }
 
   function handleSatChange(e) {
     const newSat = e.target.value
-    console.log(newSat)
     setSat(newSat)
   }
 
   function handleLightChange(e) {
     const newLight = e.target.value
-    console.log(newLight)
     setLight(newLight)
   }
 
   function handleAlphaChange(e) {
     const newAlpha = e.target.value
-    console.log(newAlpha)
     setAlpha(newAlpha)
   }
 
