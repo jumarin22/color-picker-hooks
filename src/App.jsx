@@ -26,6 +26,13 @@ export function App() {
     setAlpha(newAlpha)
   }
 
+  function handleNewState(e) {
+    setHue(Math.floor(Math.random() * 360))
+    setSat(Math.floor(Math.random() * 100))
+    setLight(Math.floor(Math.random() * 100))
+    setAlpha(Math.floor(Math.random() * 100))
+  }
+
   const newBackgroundColor = `hsla(${hue}, ${sat}%, ${light}%, ${alpha}%)`
   const newStyle = { backgroundColor: newBackgroundColor }
 
@@ -79,6 +86,9 @@ export function App() {
         />
         <label>A</label>
       </div>
+      <button type="button" onClick={handleNewState}>
+        Randomize!
+      </button>
     </>
   )
 }
